@@ -107,7 +107,7 @@ Durbin-Watson 2에 근접하여 잔차들이 독립적이라고 할 수 있다.
 
 ![5](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/5.png?raw=true)
 
-#### - Fox' Outlier Recommendation 기준으로 측정되는 Outlier 항목들을 찾아내고, 각각의 데이터를 살펴본다.
+- Fox' Outlier Recommendation 기준으로 측정되는 Outlier 항목들을 찾아내고, 각각의 데이터를 살펴본다.
 
 $$D_i > \frac{4}{N-K-1}$$
 
