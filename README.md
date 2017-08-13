@@ -70,7 +70,7 @@ superhost | 슈퍼호스트 여부 | others | 기타 시설 정보 | **총 항�
 * Data scale
 * Scale된 모형의 잔차 분포(정규성, 등분산성)
 - Price의 Log 변환 전 Price에 따른 잔차의 분포
-  ![1]('https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/1.png?raw=true')
+  ![1](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/1.png?raw=true)
 - Price의 Log 변환 후 Price에 따른 잔차의 분포
   ![2]()
   
