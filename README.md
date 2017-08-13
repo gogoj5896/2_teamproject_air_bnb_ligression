@@ -1,4 +1,4 @@
-# Airbnb 가격을 추종하는 회귀 모형 분석(Airbnb linear regression )
+# Airbnb 가격을 추종하는 회귀 모형 분석
 
 ## 1. Airbnb 란?
 ![alt text](https://a0.muscache.com/airbnb/static/logos/belo-1200x630-a0d52af6aba9463c82017da13912f19f.png 'airbnb image')
@@ -70,7 +70,7 @@ superhost | 슈퍼호스트 여부 | others | 기타 시설 정보 | **총 항�
 * Data scale
 * Scale된 모형의 잔차 분포(정규성, 등분산성)
 - Price의 Log 변환 전 Price에 따른 잔차의 분포
-  ![1]()
+  ![1]('https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/1.png')
 - Price의 Log 변환 후 Price에 따른 잔차의 분포
   ![2]()
   
