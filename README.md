@@ -1,4 +1,4 @@
-# Airbnb 가격을 추종하는 회귀 모형 분석(Airbnb linear regression )
+# Airbnb 가격을 추종하는 회귀 모형 분석
 
 ## 1. Airbnb 란?
 ![alt text](https://a0.muscache.com/airbnb/static/logos/belo-1200x630-a0d52af6aba9463c82017da13912f19f.png 'airbnb image')
@@ -67,68 +67,126 @@ superhost | 슈퍼호스트 여부 | others | 기타 시설 정보 | **총 항�
 <br />
 
 ## 5. airbnb 데이터 분석
-* Data scale
-* Scale된 모형의 잔차 분포(정규성, 등분산성)
-- Price의 Log 변환 전 Price에 따른 잔차의 분포
-  ![1]()
-- Price의 Log 변환 후 Price에 따른 잔차의 분포
-  ![2]()
-  
-- Y인 'price'를 log 변환했다.
-- 왜도는 0.036 첨도는 5.626이다.
-- Durbin-Watson 2에 근접하여 잔차들이 독립적이라고 할 수 있다.
-- 모든 변수들이 y를 설명하는데 유의한 것으로 나왔다.
-- 앞으로의 진행은 최적의 모형을 찾는 것을 목표로 삼겠다.
+◆ Data scale
 
-* ### Scale된 모형의 잔차 분포
-![3]()
-![4]()
+<br />
+
+◆ Scale된 모형의 잔차 분포(정규성, 등분산성)
+
+- Price의 Log 변환 전 Price에 따른 잔차의 분포
+
+![1](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/1.png?raw=true)
+
+- Price의 Log 변환 후 Price에 따른 잔차의 분포
+
+![2](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/2.png?raw=true)
+  
+Y인 'price'를 log 변환했다.
+
+왜도는 0.036 첨도는 5.626이다.
+
+Durbin-Watson 2에 근접하여 잔차들이 독립적이라고 할 수 있다.
+
+모든 변수들이 y를 설명하는데 유의한 것으로 나왔다.
+
+앞으로의 진행은 최적의 모형을 찾는 것을 목표로 삼겠다.
+
+<br />
+
+◆ Scale된 모형의 잔차 분포
+
+![3](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/3.png?raw=true)
+
+![4](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/4.png?raw=true)
+
 - 잔차의 분포를 살펴본 결과, 정규성 가정은 성립하지 않는 것으로 나타났다.
 
-*  아웃라이어 제거
-![5]()
-#### - Fox' Outlier Recommendation 기준으로 측정되는 Outlier 항목들을 찾아내고, 각각의 데이터를 살펴본다.
+<br />
+
+◆  아웃라이어 제거
+
+![5](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/5.png?raw=true)
+
+- Fox' Outlier Recommendation 기준으로 측정되는 Outlier 항목들을 찾아내고, 각각의 데이터를 살펴본다.
+
 $$D_i > \frac{4}{N-K-1}$$
 
-- ### Outlier 제거후 stemplot
-![6]()
+<br />
 
-- ### Outlier 제거 후 축소 회귀모형의 결과값
-- Outlier를 제거하였더니 R-square값이 약 0.083가량 높아졌다.
-- 그리고 Log-likelihood는 증가했고 AIC, BIC 결과 값들이 이전에 비해 감소했다.
-- 또한 skewness와 kurtosis 값들을 볼 때 보다 더 정규분포에 가까워진 것을 확인할 수 있다.(정규분포의 Skewness = 0, Kurtosis = 3)
-- 다중공선성은 여전히 존재한다.
+◆ Outlier 제거후 stemplot
 
-- ### Outlier 제거 후 잔차의 분포
-![7]()
-![8]()
+![6](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/6.png?raw=true)
 
-- ### 다중공선성 확인 및 제거
-![9]()
+<br />
+
+◆ Outlier 제거 후 축소 회귀모형의 결과값
+
+Outlier를 제거하였더니 R-square값이 약 0.083가량 높아졌다.
+
+그리고 Log-likelihood는 증가했고 AIC, BIC 결과 값들이 이전에 비해 감소했다.
+
+또한 skewness와 kurtosis 값들을 볼 때 보다 더 정규분포에 가까워진 것을 확인할 수 있다.(정규분포의 Skewness = 0, Kurtosis = 3)
+
+다중공선성은 여전히 존재한다.
+
+<br />
+
+◆ Outlier 제거 후 잔차의 분포
+
+![7](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/7.png?raw=true)
+
+![8](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/8.png?raw=true)
+
+<br />
+
+◆ 다중공선성 확인 및 제거
+
+![9](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/9.png?raw=true)
+
 - 각 변수 간 상관관계를 Heatmap으로 나타내본 결과 최대숙박인원인 'accommodates'와 다른 변수들과의 상관관계가 높은 것으로 나타났다.
+
 - 또한 'bedrooms'와 'Beds'간의 상관관계도 높다는 것을 확인할 수 있다.
+
 - 따라서 이를 제거하여 over-fitting을 방지할 필요성이 발생하였다.
 
-### 'Beds, bedrooms, Switzerland, Private_room'제거 후 회귀모형
- - Beds, bedrooms,Switzerland,Private_room 4가지 변수를 제거하였을 때, R-Squared 0.02 가량 축소했지고 AIC검정량이 약간 증가했지만, 다중공선성을 줄일 수 있었다.
+<br />
+
+◆ 'Beds, bedrooms, Switzerland, Private_room'제거 후 회귀모형
+
+- Beds, bedrooms,Switzerland,Private_room 4가지 변수를 제거하였을 때, R-Squared 0.02 가량 축소했지고 AIC검정량이 약간 증가했지만, 다중공선성을 줄일 수 있었다.
+
+<br />
  
- ### PCA
- #### - 각 변수에 대해서 Eigenvalue를 계산한 다음 Explained variance가 $0.8$보다 큰 경우로 $m$을 결정
+◆ PCA
+
+- 각 변수에 대해서 Eigenvalue를 계산한 다음 Explained variance가 $0.8$보다 큰 경우로 $m$을 결정
 
 $$\frac{\sum_{i=1}^m \lambda_i}{\sum_{i=1}^p \lambda_i} > 0.8$$
 
 여기서 $m$은 축소 차원의 수이다.
 
-![10]()
+![10](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/10.png?raw=true)
 
-### 최종모형의 Predicted Value와 Target Value의 Scatter plot
+<br />
 
+◆ 최종모형의 Predicted Value와 Target Value의 Scatter plot
+
+![11](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/11.png?raw=true)
+
+<br />
+<br />
 
 ##  7. 결론
+
 ### 결과
 모형을 통해서 추정하고자 했던 에어비앤비의 1박당 가격은 숙소의 전체 평점, 욕실 수, 쉐어드 룸 객실타입, 추가인원 당 추가요금, 화재감지기 여부, 주방 유무, Facility1, 2(침대 갯수, 침실 수, 최대수용인원), City1, 2(숙소가 위치한 도시), Room(숙소의 타입 - 개인실, 숙소전체)에 영향을 받는 것으로 분석되었다.
- 분석 전 유효할 것이라 생각했던 슈퍼호스트 여부 및 리뷰 수는 최종 모형에서 제외되었다. 하지만 $R^2$ 값이 0.679로 여전히 가격을 잘 설명하고 있다고 생각되며 분석 초반 있었던 다중공선성 문제를 해결하여 안정적으로 모형을 사용할 수 있다고 생각된다. 
- 
+ 분석 전 유효할 것이라 생각했던 슈퍼호스트 여부 및 리뷰 수는 최종 모형에서 제외되었다. 하지만 $R^2$ 값이 0.679로 여전히 가격을 잘 설명하고 있다고 
+생각되며 분석 초반 있었던 다중공선성 문제를 해결하여 안정적으로 모형을 사용할 수 있다고 생각된다. 
+
+<br />
+<br />
+
+
  #### 최종모형
 $$\hat{y} = \exp{(w_0 + w_1 x_1 + w_2 x_2 + w_3 x_3 + w_4 x_4 + w_5 x_5 + w_6 x_6 + w_7 x_7 + w_8 x_8 + w_9 x_9 + w_{10} x_{10} + w_{11} x_{11})}$$
 
@@ -146,6 +204,9 @@ Facility2: w8 = -0.057
 City1: w9 = -0.409
 City2: w10 = 0.246
 Room: w11 = -0.320)
+
+<br />
+<br />
 
 
 ### 코멘트
