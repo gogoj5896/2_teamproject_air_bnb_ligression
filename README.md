@@ -68,6 +68,7 @@ superhost | 슈퍼호스트 여부 | others | 기타 시설 정보 | **총 항�
 
 ## 5. airbnb 데이터 분석
 ※ Data scale
+
 ※ Scale된 모형의 잔차 분포(정규성, 등분산성)
 - Price의 Log 변환 전 Price에 따른 잔차의 분포
   ![1](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/1.png?raw=true)
@@ -112,7 +113,7 @@ $$D_i > \frac{4}{N-K-1}$$
 ※ 'Beds, bedrooms, Switzerland, Private_room'제거 후 회귀모형
  - Beds, bedrooms,Switzerland,Private_room 4가지 변수를 제거하였을 때, R-Squared 0.02 가량 축소했지고 AIC검정량이 약간 증가했지만, 다중공선성을 줄일 수 있었다.
  
- ※ PCA
+※ PCA
  - 각 변수에 대해서 Eigenvalue를 계산한 다음 Explained variance가 $0.8$보다 큰 경우로 $m$을 결정
 
 $$\frac{\sum_{i=1}^m \lambda_i}{\sum_{i=1}^p \lambda_i} > 0.8$$
