@@ -109,7 +109,7 @@ Durbin-Watson 2에 근접하여 잔차들이 독립적이라고 할 수 있다.
 
 - Fox' Outlier Recommendation 기준으로 측정되는 Outlier 항목들을 찾아내고, 각각의 데이터를 살펴본다.
 
-$$D_i > \frac{4}{N-K-1}$$
+![14](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/14.png?raw=true)
 
 <br />
 
@@ -161,7 +161,7 @@ Outlier를 제거하였더니 R-square값이 약 0.083가량 높아졌다.
 
 - 각 변수에 대해서 Eigenvalue를 계산한 다음 Explained variance가 $0.8$보다 큰 경우로 $m$을 결정
 
-$$\frac{\sum_{i=1}^m \lambda_i}{\sum_{i=1}^p \lambda_i} > 0.8$$
+![12](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/12.png?raw=true)
 
 여기서 $m$은 축소 차원의 수이다.
 
@@ -170,6 +170,8 @@ $$\frac{\sum_{i=1}^m \lambda_i}{\sum_{i=1}^p \lambda_i} > 0.8$$
 <br />
 
 ◆ 최종모형의 Predicted Value와 Target Value의 Scatter plot
+
+![13](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/13.png?raw=true)
 
 ![11](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/11.png?raw=true)
 
@@ -183,27 +185,6 @@ $$\frac{\sum_{i=1}^m \lambda_i}{\sum_{i=1}^p \lambda_i} > 0.8$$
  분석 전 유효할 것이라 생각했던 슈퍼호스트 여부 및 리뷰 수는 최종 모형에서 제외되었다. 하지만 $R^2$ 값이 0.679로 여전히 가격을 잘 설명하고 있다고 
 생각되며 분석 초반 있었던 다중공선성 문제를 해결하여 안정적으로 모형을 사용할 수 있다고 생각된다. 
 
-<br />
-<br />
-
-
- #### 최종모형
-$$\hat{y} = \exp{(w_0 + w_1 x_1 + w_2 x_2 + w_3 x_3 + w_4 x_4 + w_5 x_5 + w_6 x_6 + w_7 x_7 + w_8 x_8 + w_9 x_9 + w_{10} x_{10} + w_{11} x_{11})}$$
-
-(Coefficients
-
-Intercept: w0 = 4.484
-overall_satisfaction: w1 = 0.028
-Bathrooms: w2 = 0.042
-Shared_room: w3 = -1.039
-Extra_people: w4 = -0.145
-Somke_detector: w5 = 0.082
-Kitchen: w6 = -0.089
-Facility1: w7 = 0.182
-Facility2: w8 = -0.057
-City1: w9 = -0.409
-City2: w10 = 0.246
-Room: w11 = -0.320)
 
 <br />
 <br />
