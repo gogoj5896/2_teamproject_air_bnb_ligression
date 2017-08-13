@@ -159,13 +159,15 @@ Outlier를 제거하였더니 R-square값이 약 0.083가량 높아졌다.
  
 ◆ PCA
 
-- 각 변수에 대해서 Eigenvalue를 계산한 다음 Explained variance가 $0.8$보다 큰 경우로 $m$을 결정
+- 각 변수에 대해서 Eigenvalue를 계산한 다음 Explained variance가 0.8보다 큰 경우로 m을 결정
 
 ![12](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/12.png?raw=true)
 
-여기서 $m$은 축소 차원의 수이다.
+여기서 m은 축소 차원의 수이다.(facility1, facility2가 주성분 분석으로 나온 feature)
 
 ![10](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/10.png?raw=true)
+
+
 
 <br />
 
@@ -182,8 +184,7 @@ Outlier를 제거하였더니 R-square값이 약 0.083가량 높아졌다.
 
 ### 결과
 모형을 통해서 추정하고자 했던 에어비앤비의 1박당 가격은 숙소의 전체 평점, 욕실 수, 쉐어드 룸 객실타입, 추가인원 당 추가요금, 화재감지기 여부, 주방 유무, Facility1, 2(침대 갯수, 침실 수, 최대수용인원), City1, 2(숙소가 위치한 도시), Room(숙소의 타입 - 개인실, 숙소전체)에 영향을 받는 것으로 분석되었다.
- 분석 전 유효할 것이라 생각했던 슈퍼호스트 여부 및 리뷰 수는 최종 모형에서 제외되었다. 하지만 $R^2$ 값이 0.679로 여전히 가격을 잘 설명하고 있다고 
-생각되며 분석 초반 있었던 다중공선성 문제를 해결하여 안정적으로 모형을 사용할 수 있다고 생각된다. 
+ 분석 전 유효할 것이라 생각했던 슈퍼호스트 여부 및 리뷰 수는 최종 모형에서 제외되었다. 하지만 R-Squared 값이 0.679로 여전히 가격을 잘 설명하고 있다고 생각되며 분석 초반 있었던 다중공선성 문제를 해결하여 안정적으로 모형을 사용할 수 있다고 생각된다. 
 
 
 <br />
