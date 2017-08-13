@@ -171,7 +171,7 @@ Outlier를 제거하였더니 R-square값이 약 0.083가량 높아졌다.
 
 <br />
 
-◆ 최종모형의 Predicted Value와 Target Value의 Scatter plot
+◆ 최종모형의 regression result 및 Predicted Value와 Target Value의 Scatter plot
 
 ![13](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/13.png?raw=true)
 
