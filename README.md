@@ -70,16 +70,20 @@ superhost | 슈퍼호스트 여부 | others | 기타 시설 정보 | **총 항�
 ※ Data scale
 
 ※ Scale된 모형의 잔차 분포(정규성, 등분산성)
+
 - Price의 Log 변환 전 Price에 따른 잔차의 분포
-  ![1](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/1.png?raw=true)
+
+![1](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/1.png?raw=true)
+
 - Price의 Log 변환 후 Price에 따른 잔차의 분포
-  ![2](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/2.png?raw=true)
+
+![2](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/2.png?raw=true)
   
-- Y인 'price'를 log 변환했다.
-- 왜도는 0.036 첨도는 5.626이다.
-- Durbin-Watson 2에 근접하여 잔차들이 독립적이라고 할 수 있다.
-- 모든 변수들이 y를 설명하는데 유의한 것으로 나왔다.
-- 앞으로의 진행은 최적의 모형을 찾는 것을 목표로 삼겠다.
+Y인 'price'를 log 변환했다.
+왜도는 0.036 첨도는 5.626이다.
+Durbin-Watson 2에 근접하여 잔차들이 독립적이라고 할 수 있다.
+모든 변수들이 y를 설명하는데 유의한 것으로 나왔다.
+앞으로의 진행은 최적의 모형을 찾는 것을 목표로 삼겠다.
 
 ※ Scale된 모형의 잔차 분포
 ![3](https://github.com/gogoj5896/2_teamproject_air_bnb_ligression/blob/master/image/3.png?raw=true)
